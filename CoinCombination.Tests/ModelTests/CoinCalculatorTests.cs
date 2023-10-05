@@ -66,6 +66,28 @@ namespace CoinCombination.Tests
       Assert.AreEqual(0, result2);
     }
 
+    [TestMethod]
+    public void CalculateChange_IncreaseNickelCountAndDecreaseTotalMoneyValue_Int()
+    {
+      CoinCalculator newCoinCalc = new CoinCalculator(.05F);
+      newCoinCalc.CalculateChange();
+      int result1 = newCoinCalc.TotalAddedCoinValue["Nickels"];
+      float result2 = newCoinCalc.UserMoneyValue;
+      Assert.AreEqual(1, result1);
+      Assert.AreEqual(0, result2);
+    }
+
+    [TestMethod]
+    public void CalculateChange_IncreasePennyCountAndDecreaseTotalMoneyValue_Int()
+    {
+      CoinCalculator newCoinCalc = new CoinCalculator(.01F);
+      newCoinCalc.CalculateChange();
+      int result1 = newCoinCalc.TotalAddedCoinValue["Pennies"];
+      float result2 = newCoinCalc.UserMoneyValue;
+      Assert.AreEqual(1, result1);
+      Assert.AreEqual(0, result2);
+    }
+
     
   }
 }

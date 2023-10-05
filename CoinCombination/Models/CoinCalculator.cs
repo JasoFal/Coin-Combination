@@ -22,9 +22,15 @@ namespace CoinCombination.Models
         TotalAddedCoinValue["Dimes"] += 1;
         return UserMoneyValue -= .10F;
       }
+      else if (UserMoneyValue >= .05F)
+      {
+        TotalAddedCoinValue["Nickels"] += 1;
+        return UserMoneyValue -= .05F;
+      }
       else
       {
-        return UserMoneyValue;
+        TotalAddedCoinValue["Pennies"] += 1;
+        return UserMoneyValue -= .01F;
       }
     }
   }
