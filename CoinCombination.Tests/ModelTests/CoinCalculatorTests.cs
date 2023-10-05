@@ -20,7 +20,7 @@ namespace CoinCombination.Tests
     {
       float newUserInput = 0.50F;
       CoinCalculator newCoinCalc = new CoinCalculator(newUserInput);
-      float result = newCoinCalc.CoinValue;
+      float result = newCoinCalc.UserMoneyValue;
       Assert.AreEqual(newUserInput, result);
     }
     
@@ -29,8 +29,19 @@ namespace CoinCombination.Tests
     {
       CoinCalculator newCoinCalc = new CoinCalculator(.50F);
       float newCoinValue = .99F;
-      newCoinCalc.CoinValue = newCoinValue;
-      Assert.AreEqual(newCoinValue, newCoinCalc.CoinValue);
+      newCoinCalc.UserMoneyValue = newCoinValue;
+      Assert.AreEqual(newCoinValue, newCoinCalc.UserMoneyValue);
+    }
+
+    [TestMethod]
+    public void DictionaryInit_StoreEmptyCoinValues_Int()
+    {
+      CoinCalculator newCoinCalc = new CoinCalculator(.50F);
+      int emptyCoinValue = 0;
+      Assert.AreEqual(emptyCoinValue, newCoinCalc.totalAddedCoinValue["Quarters"]);
+      Assert.AreEqual(emptyCoinValue, newCoinCalc.totalAddedCoinValue["Dimes"]);
+      Assert.AreEqual(emptyCoinValue, newCoinCalc.totalAddedCoinValue["Nickels"]);
+      Assert.AreEqual(emptyCoinValue, newCoinCalc.totalAddedCoinValue["Pennies"]);
     }
   }
 }

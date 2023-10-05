@@ -4,10 +4,11 @@ namespace CoinCombination.Models
 {
   public class CoinCalculator
   {
-    public float CoinValue { get; set; } 
+    public float UserMoneyValue { get; set; }
+    public Dictionary<string, int> totalAddedCoinValue = new Dictionary<string, int>() { {"Quarters", 0}, {"Dimes", 0}, {"Nickels", 0}, {"Pennies", 0} };
     public CoinCalculator(float userInput)
     {
-      CoinValue = userInput;
+      UserMoneyValue = userInput;
     }
   }
 }
