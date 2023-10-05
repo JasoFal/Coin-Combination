@@ -10,5 +10,10 @@ namespace CoinCombination.Models
     {
       UserMoneyValue = userInput;
     }
+    public float CalculateChange()
+    {
+      totalAddedCoinValue["Quarters"] += 1;
+      return UserMoneyValue -= .25F;
+    }
   }
 }
