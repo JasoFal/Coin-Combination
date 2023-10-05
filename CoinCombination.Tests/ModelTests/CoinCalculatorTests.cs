@@ -14,6 +14,7 @@ namespace CoinCombination.Tests
       CoinCalculator newCoinCalc = new CoinCalculator(0.50F);
       Assert.AreEqual(typeof(CoinCalculator), newCoinCalc.GetType());
     }
+
     [TestMethod]
     public void GetCoinValue_ReturnCoinValue_Float()
     {
@@ -21,6 +22,15 @@ namespace CoinCombination.Tests
       CoinCalculator newCoinCalc = new CoinCalculator(newUserInput);
       float result = newCoinCalc.CoinValue;
       Assert.AreEqual(newUserInput, result);
+    }
+    
+    [TestMethod]
+    public void SetCoinValue_SetValueOfCoinValue_Void()
+    {
+      CoinCalculator newCoinCalc = new CoinCalculator(.50F);
+      float newCoinValue = .99F;
+      newCoinCalc.CoinValue = newCoinValue;
+      Assert.AreEqual(newCoinValue, newCoinCalc.CoinValue);
     }
   }
 }
