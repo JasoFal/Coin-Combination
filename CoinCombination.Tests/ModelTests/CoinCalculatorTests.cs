@@ -37,11 +37,11 @@ namespace CoinCombination.Tests
     public void DictionaryInit_StoreEmptyCoinValues_Int()
     {
       CoinCalculator newCoinCalc = new CoinCalculator(.50F);
-      int emptyCoinValue = newCoinCalc.totalAddedCoinValue["Quarters"];
-      Assert.AreEqual(emptyCoinValue, newCoinCalc.totalAddedCoinValue["Quarters"]);
-      Assert.AreEqual(emptyCoinValue, newCoinCalc.totalAddedCoinValue["Dimes"]);
-      Assert.AreEqual(emptyCoinValue, newCoinCalc.totalAddedCoinValue["Nickels"]);
-      Assert.AreEqual(emptyCoinValue, newCoinCalc.totalAddedCoinValue["Pennies"]);
+      int emptyCoinValue = newCoinCalc.TotalAddedCoinValue["Quarters"];
+      Assert.AreEqual(emptyCoinValue, newCoinCalc.TotalAddedCoinValue["Quarters"]);
+      Assert.AreEqual(emptyCoinValue, newCoinCalc.TotalAddedCoinValue["Dimes"]);
+      Assert.AreEqual(emptyCoinValue, newCoinCalc.TotalAddedCoinValue["Nickels"]);
+      Assert.AreEqual(emptyCoinValue, newCoinCalc.TotalAddedCoinValue["Pennies"]);
     }
 
     [TestMethod]
@@ -49,10 +49,23 @@ namespace CoinCombination.Tests
     {
       CoinCalculator newCoinCalc = new CoinCalculator(.25F);
       newCoinCalc.CalculateChange();
-      int result1 = newCoinCalc.totalAddedCoinValue["Quarters"];
+      int result1 = newCoinCalc.TotalAddedCoinValue["Quarters"];
       float result2 = newCoinCalc.UserMoneyValue;
       Assert.AreEqual(1, result1);
       Assert.AreEqual(0, result2);
     }
+
+    [TestMethod]
+    public void CalculateChange_IncreaseDimeCountAndDecreaseTotalMoneyValue_Int()
+    {
+      CoinCalculator newCoinCalc = new CoinCalculator(.10F);
+      newCoinCalc.CalculateChange();
+      int result1 = newCoinCalc.TotalAddedCoinValue["Dimes"];
+      float result2 = newCoinCalc.UserMoneyValue;
+      Assert.AreEqual(1, result1);
+      Assert.AreEqual(0, result2);
+    }
+
+    
   }
 }
