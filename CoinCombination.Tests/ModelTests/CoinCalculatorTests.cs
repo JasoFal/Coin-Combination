@@ -45,7 +45,7 @@ namespace CoinCombination.Tests
     }
 
     [TestMethod]
-    public void CalculateChange_IncreaseQuartersCountAndDecreasesTotalMoneyValue_Int()
+    public void CalculateChange_IncreaseQuartersCountAndDecreasesTotalMoneyValue_Void()
     {
       CoinCalculator newCoinCalc = new CoinCalculator(.25F);
       newCoinCalc.CalculateChange();
@@ -56,7 +56,7 @@ namespace CoinCombination.Tests
     }
 
     [TestMethod]
-    public void CalculateChange_IncreaseDimeCountAndDecreaseTotalMoneyValue_Int()
+    public void CalculateChange_IncreaseDimeCountAndDecreaseTotalMoneyValue_Void()
     {
       CoinCalculator newCoinCalc = new CoinCalculator(.10F);
       newCoinCalc.CalculateChange();
@@ -67,7 +67,7 @@ namespace CoinCombination.Tests
     }
 
     [TestMethod]
-    public void CalculateChange_IncreaseNickelCountAndDecreaseTotalMoneyValue_Int()
+    public void CalculateChange_IncreaseNickelCountAndDecreaseTotalMoneyValue_Void()
     {
       CoinCalculator newCoinCalc = new CoinCalculator(.05F);
       newCoinCalc.CalculateChange();
@@ -78,7 +78,7 @@ namespace CoinCombination.Tests
     }
 
     [TestMethod]
-    public void CalculateChange_IncreasePennyCountAndDecreaseTotalMoneyValue_Int()
+    public void CalculateChange_IncreasePennyCountAndDecreaseTotalMoneyValue_Void()
     {
       CoinCalculator newCoinCalc = new CoinCalculator(.01F);
       newCoinCalc.CalculateChange();
@@ -89,12 +89,21 @@ namespace CoinCombination.Tests
     }
 
     [TestMethod]
-    public void CalculateChange_LoopWhileUserMoneyValueIsAbove0_Int()
+    public void CalculateChange_LoopWhileUserMoneyValueIsAbove0_Void()
     {
       CoinCalculator newCoinCalc = new CoinCalculator(.50F);
       newCoinCalc.CalculateChange();
       int result = newCoinCalc.TotalAddedCoinValue["Quarters"];
       Assert.AreEqual(2, result);
+    }
+
+    [TestMethod]
+    public void ClearTotalAddedCoinValue_ClearsResultsFromTotalAddedCoinValue_Void()
+    {
+      CoinCalculator newCoinCalc = new CoinCalculator(.50F);
+      newCoinCalc.CalculateChange();
+      newCoinCalc.ClearTotalAddedCoinValue();
+      Assert.AreEqual(0, newCoinCalc.TotalAddedCoinValue["Quarters"]);
     }
   }
 }

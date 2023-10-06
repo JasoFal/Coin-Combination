@@ -38,5 +38,12 @@ namespace CoinCombination.Models
       }
       while (UserMoneyValue != 0);
     }
+    public void ClearTotalAddedCoinValue()
+    {
+      TotalAddedCoinValue["Quarters"] = 0;
+      TotalAddedCoinValue["Dimes"] = 0;
+      TotalAddedCoinValue["Nickels"] = 0;
+      TotalAddedCoinValue["Pennies"] = 0;
+    }
   }
 }
