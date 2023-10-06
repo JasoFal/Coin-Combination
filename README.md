@@ -1,37 +1,30 @@
-# _C# Template Repo_
+# _Coin Combination_
 
 #### By _**Jason Falk**_
 
-#### _Boilerplate template for C#._
+#### _A Figetech project._
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* _C#_
+* _Git/Git Bash_
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_Find how many coins you will receive with inputted change._
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
+* _Open Git Bash type in git clone and then copy and paste <mark>https://github.com/JasoFal/CoinCombination.Solution.git<mark>_
+* _Once cloned open program using either Git Bash/ a terminal of your choice using the cd command to reach file. Or going into file explorer and opening it manually._
+* _Type dotnet build in terminal in CoinCombination directory._
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _Rounds up coins if a number larger than 2 decimal places is inputted._
 
 ## License
 
 _MIT_
 
-Copyright (c) _date_ _author name(s)_
+Copyright (c) _10/6/23_ _Jason Falk_
