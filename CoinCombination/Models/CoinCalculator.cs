@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace CoinCombination.Models
@@ -10,28 +11,32 @@ namespace CoinCombination.Models
     {
       UserMoneyValue = userInput;
     }
-    public float CalculateChange()
+    public void CalculateChange()
     {
-      if (UserMoneyValue >= .25F)
+      do
       {
-        TotalAddedCoinValue["Quarters"] += 1;
-        return UserMoneyValue -= .25F;
+        if (UserMoneyValue >= .25F)
+        {
+          TotalAddedCoinValue["Quarters"] += 1;
+          UserMoneyValue -= .25F;
+        }
+        else if (UserMoneyValue >= .10F)
+        {
+          TotalAddedCoinValue["Dimes"] += 1;
+          UserMoneyValue -= .10F;
+        }
+        else if (UserMoneyValue >= .05F)
+        {
+          TotalAddedCoinValue["Nickels"] += 1;
+          UserMoneyValue -= .05F;
+        }
+        else
+        {
+          TotalAddedCoinValue["Pennies"] += 1;
+          UserMoneyValue -= .01F;
+        }
       }
-      else if (UserMoneyValue >= .10F)
-      {
-        TotalAddedCoinValue["Dimes"] += 1;
-        return UserMoneyValue -= .10F;
-      }
-      else if (UserMoneyValue >= .05F)
-      {
-        TotalAddedCoinValue["Nickels"] += 1;
-        return UserMoneyValue -= .05F;
-      }
-      else
-      {
-        TotalAddedCoinValue["Pennies"] += 1;
-        return UserMoneyValue -= .01F;
-      }
+      while (UserMoneyValue != 0);
     }
   }
 }

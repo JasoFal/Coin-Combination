@@ -88,6 +88,13 @@ namespace CoinCombination.Tests
       Assert.AreEqual(0, result2);
     }
 
-    
+    [TestMethod]
+    public void CalculateChange_LoopWhileUserMoneyValueIsAbove0_Int()
+    {
+      CoinCalculator newCoinCalc = new CoinCalculator(.50F);
+      newCoinCalc.CalculateChange();
+      int result = newCoinCalc.TotalAddedCoinValue["Quarters"];
+      Assert.AreEqual(2, result);
+    }
   }
 }
