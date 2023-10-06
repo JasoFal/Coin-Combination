@@ -91,10 +91,10 @@ namespace CoinCombination.Tests
     [TestMethod]
     public void CalculateChange_LoopWhileUserMoneyValueIsAbove0_Void()
     {
-      CoinCalculator newCoinCalc = new CoinCalculator(.50F);
+      CoinCalculator newCoinCalc = new CoinCalculator(.15F);
       newCoinCalc.CalculateChange();
-      int result = newCoinCalc.TotalAddedCoinValue["Quarters"];
-      Assert.AreEqual(2, result);
+      int result = newCoinCalc.TotalAddedCoinValue["Nickels"];
+      Assert.AreEqual(1, result);
     }
 
     [TestMethod]

@@ -36,7 +36,7 @@ namespace CoinCombination.Models
           UserMoneyValue -= .01F;
         }
       }
-      while (UserMoneyValue != 0);
+      while (UserMoneyValue >= 0);
     }
     public void ClearTotalAddedCoinValue()
     {
