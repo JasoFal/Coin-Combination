@@ -2,7 +2,7 @@
 
 #### By _**Jason Falk**_
 
-#### _A Figetech project._
+#### _A Fidgetech project._
 
 ## Technologies Used
 
